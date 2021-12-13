@@ -60,6 +60,15 @@ export default function PokemonCard(props) {
               >
                 {name}
               </Typography>
+              <Typography
+                textAlign="center"
+                color="#989898"
+                gutterBottom
+                variant="h6"
+                component="div"
+              >
+                {`ID:${id}`}
+              </Typography>
             </CardContent>
           </StyledLink>
         </CardActionArea>
