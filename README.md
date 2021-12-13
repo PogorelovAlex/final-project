@@ -1,6 +1,6 @@
 # Final project POKEDEX
 
-![](https://github.com/PogorelovAlex/final-project/blob/PokemonReadme.png)
+![](https://github.com/PogorelovAlex/final-project/blob/main/PokemonReadme.png)
 
 **POKEDEX** - приложение для ловли покемонов.
 
