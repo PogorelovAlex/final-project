@@ -32,7 +32,7 @@ export default function AllPokemonsPage() {
       >
         {pokemon.map((p) => (
           <Grid
-            key={`${p.data.id}-${pokemon.name}`}
+            key={`${p.data.id}-${p.data.name}`}
             sx={{
               display: "flex",
               flexDirection: "column",

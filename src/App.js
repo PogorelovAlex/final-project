@@ -30,13 +30,10 @@ function App() {
           return Promise.all(promisesArray);
         })
         .then((data) => {
-          const aditionalData = data.map((p) => {
-            return { ...p, isCaught: false };
-          });
-          setPokemon((pokemon) => [...pokemon, ...aditionalData]);
+          setPokemon([...pokemon, ...data]);
         });
 
-      setCurrentPage((prevState) => prevState + 1);
+      setCurrentPage((prevPage) => prevPage + 1);
       setFetching(false);
     }
   }, [fetching]);
