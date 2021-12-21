@@ -8,8 +8,8 @@ import { PokemonCardContext } from "../context/PokemonCardContext";
 import FreeButton from "../components/FreeButton";
 
 export default function CaughtPokemonPage() {
-  const { caughtPokemons } = useContext(Context);
-
+  const { caughtPokemons, setCaughtPokemons } = useContext(Context);
+  console.log(caughtPokemons);
   return (
     <Grid
       sx={{
@@ -46,6 +46,13 @@ export default function CaughtPokemonPage() {
                 toggleFree: () => {
                   const index = caughtPokemons.indexOf(p);
                   caughtPokemons.splice(index, 1);
+                  setCaughtPokemons([
+                    ...caughtPokemons,
+                    { ...p, isCaught: false },
+                  ]);
+                  setCaughtPokemons(
+                    caughtPokemons.filter((p) => p.isCaught === true)
+                  );
                 },
               }}
             >

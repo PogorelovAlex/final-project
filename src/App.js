@@ -30,7 +30,11 @@ function App() {
           return Promise.all(promisesArray);
         })
         .then((data) => {
-          setPokemon([...pokemon, ...data]);
+          const additinalData = data.map((item) => {
+            return { ...item, isCaught: false };
+          });
+
+          setPokemon([...pokemon, ...additinalData]);
         });
 
       setCurrentPage((prevPage) => prevPage + 1);
@@ -59,7 +63,12 @@ function App() {
   return (
     <div>
       <Context.Provider
-        value={{ pokemon, setPokemon, caughtPokemons, setCaughtPokemons }}
+        value={{
+          pokemon,
+          setPokemon,
+          caughtPokemons,
+          setCaughtPokemons,
+        }}
       >
         <NavBar />
 
